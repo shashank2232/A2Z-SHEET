@@ -1,0 +1,10 @@
+void printGfg(int N) {
+        // base case
+        if(N == 0)
+        {
+            return;
+        }
+        
+        cout<<"GFG"<<" ";
+        printGfg(N-1);
+    }   // TIME: O(N)  SPACE: O(N) i.e. the stack space which is being used,the internal memory

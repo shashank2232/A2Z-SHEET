@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int A;
+    cin>>A;
+    int B;
+    cin>>B;
+
+    // int ans = 1;
+	// int minimum = min(A,B);
+	// for(int i=minimum;i >= 1;i--){
+	//     if(A%i == 0 && B%i == 0){
+	//         ans = i;
+	//         break;
+	//     }
+	// }
+	// return ans;
+	   
+	   // OR             
+	   // (eventually one of them will become 0 and thats where the other will be our GCD)
+	   while(A>0 && B>0){
+	       if(A > B){
+	           A = A%B;              // done to save time as through this also we'll get the GREATEST COMMON DIVISOR 
+	       }
+	       else{
+	           B = B%A;
+	       }
+	   }
+	   if(A==0){
+        cout<<"GCD: "<<B;
+	   }
+	   else{
+        cout<<"GCD: "<<A;
+	   }
+	 // TIME: O(logφ [min(A,B)])   log because there are divisions in code i.e. %
+   
+}
+
+Input: A = 3, B = 6
+Output: 3
+Explanation: GCD of 3 and 6 is 3
+
+Input: A = 1, B = 1
+Output: 1
+Explanation: GCD of 1 and 1 is 1

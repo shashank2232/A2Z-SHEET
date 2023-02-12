@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   for(int i=0;i<n;i++){
+    // SPACES     (each row has space equal to it in beginning, 0th row has 0 spaces, 1st row has 1 space etc.)
+    for(int j=0;j<i;j++){
+        cout<<" ";
+    }
+    // STARS     (each row has 2*n - (2*i + 1) stars, 0th row has 9 stars, 1st row has 7 stars and so on)
+    for(int j=0; j < 2*n - (2*i + 1);j++){
+        cout<<"*";
+    }
+    // SPACES   (each row has space equal to it in end, 0th row has 0 spaces, 1st row has 1 space etc.)
+    for(int j=0;j<i;j++){
+        cout<<" ";
+    }
+    cout<<endl;
+   }
+   return 0;
+}
+
+*********
+ *******
+  *****
+   ***
+    *

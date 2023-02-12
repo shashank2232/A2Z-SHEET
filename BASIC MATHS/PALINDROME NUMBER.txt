@@ -1,0 +1,53 @@
+bool isPalindrome(int x) {
+        // Solution I: Convert the number to a string, reverse it and compare.
+        // string rev = to_string(x);
+        // reverse(rev.begin(), rev.end());
+        // return to_string(x) == rev;
+        
+        
+        // Solution II: Convert the number to a string, then use two pointers at beginning and end to check if it's a palindrome.
+        string s = to_string(x);
+        int i = 0, j = s.size()-1;
+        while (i <= j) if (s[i++] != s[j--]) return false;
+        return true;
+        
+        // Solution III: Reverse the second half of the number and then compare.
+        // if (x < 0 || (x % 10 == 0 && x != 0)) return false;
+        // int rev = 0;
+        // while (rev < x) {
+        //     rev = rev * 10 + x % 10;
+        //     x /= 10;
+        // }
+        // return x == rev || x == rev / 10;
+        
+            // OR
+		    // int reverseNum = 0;
+		    // int duplicate = x;
+		    // while(x != 0){
+		    // int lastDigit = x%10;
+		    // // if reverseNum gets multiplied by 10 and goes out of range , simply return 0
+		    // if(reverseNum > INT_MAX/10 || reverseNum < INT_MIN/10){
+		    // return 0;
+		    // }
+		    // reverseNum = (reverseNum * 10) + lastDigit;
+		    // x = x/10;
+		    // }
+		    // if(reverseNum == duplicate){
+		    //     return true;
+		    // }
+		    // else{
+		    //     return false;
+		    // }
+    }
+
+Input: x = 121
+Output: true
+Explanation: 121 reads as 121 from left to right and from right to left.
+
+Input: x = -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+
+Input: x = 10
+Output: false
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.

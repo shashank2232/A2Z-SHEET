@@ -1,0 +1,22 @@
+void print(int i,int N){
+        // base case 
+        if(i > N){
+            return;
+        }
+        print(i+1,N);
+        cout<<i<<" ";
+  }
+    void printNos(int N) {
+        // base case
+        // if(N == 0)
+        // {
+        //     return;
+        // }
+        
+        // cout<<N<<" ";
+        // printNos(N-1);
+        
+        // OR (USING BACKTRACKING)
+        int i = 1;
+        print(i,N);
+    }

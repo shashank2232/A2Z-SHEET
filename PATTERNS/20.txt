@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   int spaces = 2*n - 2;       // for n=5, initially spaces will be 8 and according to condition in loop, it will increment/decrement
+   for(int i=1;i<=(2*n-1);i++){
+    int stars = i;       // initially each row will have stars equal to row number, 1st row 1 star,2nd row 2 stars,5th row 5 stars
+    // when row crosses n->5,stars start gradually decrementing from 4 till 1,6th row 4 stars,7th row 3 stars,8th row 2 stars and 9th row 1 star
+    if(i > n){        
+        stars = 2*n-i;
+    }
+    // STARS
+    for(int j=1;j<=stars;j++){
+        cout<<"*";
+    }
+
+    // SPACES
+    for(int j=1;j<=spaces;j++){
+        cout<<" ";
+    }
+
+    // STARS
+    for(int j=1;j<=stars;j++){
+        cout<<"*";
+    }
+    
+    // updating spaces (for spaces,till i reaches n spaces get decremented by 2 in each row, 1st row 8 spaces,2nd row 6 spaces,5th row 0 spaces)
+    // when i reaches n then spaces start incrementing, 6th row 2 spaces,7th row 4 spaces, 9th row 8 spaces
+    if(i < n){
+        spaces -= 2;
+    }
+    else{
+        spaces += 2;
+    }
+    cout<<endl;
+   }
+
+   return 0;
+}
+
+*        *
+**      **
+***    ***
+****  ****
+**********
+****  ****
+***    ***
+**      **
+*        *

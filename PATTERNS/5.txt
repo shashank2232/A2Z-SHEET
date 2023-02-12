@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   //to run from n to 1 (reverse order to print n stars,then n-1 stars etc.)
+	   // for(int i=n;i>0;i--){          
+	   // // each row will have i cols(1st row will have n columns of *,2nd row will have n-1 columns of *,last row will
+	   // // just have 1 column of *)
+    //       for(int j=1;j<=i;j++){        
+    //          cout<<"* ";
+    //         }cout<<endl;
+    //   }
+    // OR
+    for(int i=1;i<=n;i++){
+        for(int j=0;j<n-i+1;j++){
+            cout<<"* ";
+        }cout<<endl;
+    }
+   return 0;
+}
+
+* * * * *
+* * * * 
+* * * 
+* *  
+* 

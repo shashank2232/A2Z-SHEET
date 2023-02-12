@@ -1,0 +1,21 @@
+void printNos(int N)
+    {
+        // base case
+        // if(N == 0)
+        // {
+        //     return;
+        // }
+        // printNos(N-1);
+        // cout<<N<<" ";
+        
+    // OR (USING BACKTRACKING)
+    // base case
+    if(N < 1){
+        return;
+    }
+    
+    // here n keeps reducing & reaches 0 and function returns back, then the printing happens as in the function
+    // print is written after the function call (this is BACKTRACKING , coming back & doing the remaining work)
+    printNos(N-1);      
+    cout<<N<<" ";
+    }

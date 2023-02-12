@@ -1,0 +1,26 @@
+string armstrongNumber(int n){
+        // code here
+        int ans = 0;
+        int cube = 0;
+        int x = n;
+        while(n)
+        {
+            int rem = n%10;
+            cube = rem*rem*rem;
+            ans += cube;
+            n/=10;
+        }
+        if(ans == x)
+        {
+            return "Yes";
+        }
+        else{
+            return "No";
+        }
+    }
+
+Input: N = 153
+Output: "Yes"
+Explanation: 153 is an Armstrong number
+since 13 + 53 + 33 = 153.
+Hence answer is "Yes".

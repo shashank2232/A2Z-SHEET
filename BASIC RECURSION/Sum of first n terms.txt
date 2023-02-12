@@ -1,0 +1,17 @@
+class Solution {
+  public:
+  long long sum = 0;
+  long long cube;
+    long long sumOfSeries(long long N) {
+        // base case
+        if(N == 0)
+        {
+            return 0;
+        }
+        
+        cube = N*N*N;
+        sum += cube;
+        sumOfSeries(N-1);
+        return sum;
+    }
+};

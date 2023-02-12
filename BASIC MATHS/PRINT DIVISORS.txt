@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+   int n;
+   cin>>n;
+   // TIME: O(N)
+//    for(int i=1;i<=n;i++){
+//     if(n % i == 0){
+//         cout<<i<<" ";
+//     }
+//    } 
+
+// OR  TIME: O(sqrt(N)
+for(int i=1;i<=sqrt(n);i++){
+    if(n % i == 0){
+        cout<<i<<" ";
+        // for n=36 , 6 will be printed 2 times as 6*6=36 , hence we'll check if our number doesn't equal to n/i only then print
+        if((n/i) != i){
+        cout<<n/i<<" ";
+        }     
+    }
+   }
+   return 0;
+}
+
+I/P 36 
+O/P 1 36 2 18 3 12 4 9 6

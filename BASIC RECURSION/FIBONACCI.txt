@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int fibonacci(int n){
+    // base case
+    if(n==0 || n==1){
+        return n;
+    }
+    int ans;
+    // ITERATIVE WAY (TIME -> O(N))
+    for(int i=2;i<=n;i++){
+        ans = fibonacci(i-1) + fibonacci(i-2);
+    }
+    return ans;
+
+    // RECURSIVE WAY (TIME -> O(2powerN) i.e. exponential)
+    int last = fibonacci(n-1);
+    int secondLast = fibonacci(n-2);
+    return last + secondLast ;
+
+}
+int main()
+{
+   int n;
+   cin>>n;
+   int ans = fibonacci(n);
+   cout<<"FIBONACCI IS-> "<<ans;
+   return 0;
+}

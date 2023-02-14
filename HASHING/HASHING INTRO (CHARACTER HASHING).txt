@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    cin>>s;
+    // pre-computation (here we're only dealing with the LOWERCASE LETTERS)
+    int hash[26] = {0};
+    // for UPPERCASE : hash[s[i] - 'A'] += 1;
+
+    // [ to deal with LOWERCASE & UPPERCASE LETTERS BOTH 
+    // int hash[256] = {0};
+    // iterate the string
+    // for(int i=0;i<s.size();i++){
+    //     hash[s[i]] += 1;      // if char is 'A' it goes to 97, if 'B' it goes to 98 .... s[i] is a character so hash[s[i]] means hash[integer]   hence it will autocast s[i] to its integer value i.e. ASCII value
+    // }
+    // while(q--){
+    //     char c;          // taking characters whose appearance we want to know
+    //     cin>>c;
+    //     // fetch
+    //     cout<<hash[c]<<" ";  // c is done to get the index of that character in hash array
+    // } ]
+
+    // iterate the string
+    for(int i=0;i<s.size();i++){
+        hash[s[i] - 'a'] += 1;       // this is our indexing, character - 'a' will give index where we have to store the appearance in hash array
+    }
+
+    int q;             // all queries
+    cin>>q;
+    while(q--){
+        char c;          // taking characters whose appearance we want to know
+        cin>>c;
+        // fetch
+        cout<<hash[c - 'a']<<" ";  // c-'a' is done to get the index of that character in hash array
+    }
+   return 0;
+}

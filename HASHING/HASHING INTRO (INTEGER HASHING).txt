@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+// int arr[1e7];     // here 1e7 means 10power7 or 10^7
+// NOTE: when we make a global array, its each element is initialized as 0 instead of a GARBAGE VALUE 
+int main()
+{
+   int n;
+   cin>>n;
+   int arr[n];
+   for(int i=0;i<n;i++){
+    cin>>arr[i];
+   }
+// NOTE: Any array of type int can have maximum size of 10^6 inside main() , but if we declare it globally i.e. outside main(),we can declare it
+// to 10^7
+   // pre-compute
+   int hash[100] = {0};
+   for(int i=0;i<n;i++){
+    hash[arr[i]] += 1;                 // by this, hash array will have each element's appearance stored in it
+   }
+
+   int q;         //total testcase
+   cin>>q;
+   while(q--){
+    int number;
+    cin>>number;
+    // fetch
+    cout<<hash[number]<<" "<<endl;     // any number's appearance in input array will be displayed in output screen by help of hash array
+   }
+   return 0;
+}

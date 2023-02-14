@@ -1,0 +1,12 @@
+void frequencyCount(vector<int>& arr,int N, int P)
+    { 
+        // code here
+        int hash[100000] = {0};
+       for (int i = 0 ; i < N ; i ++){
+           hash[arr[i]] +=1;              // this will mark each element's appearance in hash array
+       }
+
+       for (int i = 0 ; i < N ; i ++){
+           arr[i] = hash[i +1];
+       }
+    }
